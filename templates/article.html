@@ -1,0 +1,22 @@
+    {% extends 'layout.html' %}
+    
+     {% block title %}
+        <title>{{ title }} - {{ blog_name }}</title>
+     {% endblock %}
+    
+    {% block content %}
+         <article>
+                <header class="post-header">
+                    <div class="meta"><time datetime="{{ date|string }}">{{ date.strftime('%B %d, %Y') }}</time></div>
+                <h1>
+                    {{ title }}
+                </h1>
+                </header>
+                <div class="post-content"> 
+                    {{ content }}
+                </div>
+              
+                <hr/>
+                <!-- discus comments go here -->
+          </article>
+    {% endblock %}
