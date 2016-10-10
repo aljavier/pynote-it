@@ -15,9 +15,11 @@ sys.setdefaultencoding('utf8')
 
 LOCALE = 'es_DO.UTF-8' # Locale for use on dates formats and other backend stuff by python 
 DEFAULT_LANG = 'es' # Default language for articles, goes in meta tag on site
+DATE_FORMAT = '%Y-%m-%d' # Date format to use in the articles date
+
 TAGS = ['Programación', 'Linux'] # General tags
 BLOG_NAME = '[ root@paranoia ~/blog ]# _' # Name of the blog, this is used for the title on <head></head> and the website header
-DATE_FORMAT = '%Y-%m-%d' # Date format to use in the articles date
+
 INDEX_FILE = "index.html" # The template file to render for generate de index file (using Jinja2)
 ARTICLE_FILE = 'article.html' # Template file to render for generate the article/post (using Jinja2)
 TEMPLATES_DIR = 'templates'   # Templates directory of jinja2 files
@@ -39,7 +41,6 @@ class Article:
         self.slug = ''
         self.content = ''
 
-
 def convert_to_markdown(text):
     ''' Parse markdown formatted text into html '''
     html = markdown.markdown(text, extensions=['codehilite'])
@@ -47,7 +48,6 @@ def convert_to_markdown(text):
 
 def proccess_template(file_name, template_name, template_vars, templates_dir=TEMPLATES_DIR):
     ''' Convert a jinja2 template to a html file '''
-    # Initialize jinja2 objects
     templateLoader = jinja2.FileSystemLoader(templates_dir) 
     templateEnv = jinja2.Environment( loader=templateLoader )
     template = templateEnv.get_template(template_name)
@@ -174,12 +174,7 @@ if __name__ == "__main__":
               
                article.slug = article.slug if len(article.slug) != 0 else os.path.basename(file.name)[:-3]
                
-               generate_article(article.date, 
-                                article.title, 
-                                article.content, 
-                                article.tags,
-                                article.lang, 
-                                article.slug) 
+               generate_article(article.date, article.title, article.content, article.tags, article.lang, article.slug) 
                     
                articles.append(article)
 
