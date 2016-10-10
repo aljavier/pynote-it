@@ -105,7 +105,7 @@ of the article/post file in plain text. These are the next:
 
         lang: en
 
-**Note**: All annotations are obligatory, except `slug`.
+**Note**: All annotations are obligatory, except `slug` and `lang`.
 
 Generate website
 ----------------
