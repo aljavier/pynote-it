@@ -30,6 +30,10 @@ The configuration is as follow:
        
          DEFAULT_LANG = 'es'  
 
+* **DATE_FORMAT**: Date format to use in the articles date.
+     
+        DATE_FORMAT = '%Y-%m-%d'
+
 * **TAGS**: General tags for the website, goes in the meta tag.
        
          TAGS = ['Programación', 'Linux']
@@ -38,13 +42,21 @@ The configuration is as follow:
         
         BLOG_NAME = 'My Awesome blog name' 
 
-* **DATE_FORMAT**: Date format to use in the articles date.
-     
-        DATE_FORMAT = '%Y-%m-%d'
+* **AUTHOR**: Name of the blog's author, when templates rendered it goes on meta tag.
+ 
+        AUTHOR = 'Juan Perez'
+
+* **BLOG_DESCRIPTION**: Blog description, it goes on meta tag.
+        
+        BLOG_DESCRIPTION = 'Apuntes y notas de un newbie.'
 
 * **INDEX_FILE**: The template file to render for generate de index file (using `Jinja2`).
         
         INDEX_FILE = "index.html"
+
+* **THEME_DIR**: The directoty container for `TEMPLATES_DIR` and `STYLES_DIR` directories.
+
+        THEME_DIR = 'theme/'
 
 * **ARTICLE_FILE**: Template file to render for generate the article/post (using `Jinja2`).
         
@@ -74,9 +86,11 @@ The configuration is as follow:
         
         HTML_DIR = 'html/'
 
-* **EXT**: Extension of `Markdown` files
+* **SOURCE_FILE_EXT**: Extension of `Markdown` files
        
-         EXT = 'md' 
+         SOURCE_FILE_EXT = 'md' 
+
+* **OUTPUT_FILE_EXT**: Extension of html files.
 
 How to create a new entry
 -------------------------
@@ -104,8 +118,10 @@ of the article/post file in plain text. These are the next:
 * **lang**: Language of the article/post, if not specified the configuration variable `DEFAULT_LANG` will be used. It's optional. 
 
         lang: en
+        
+* **author**: Author of the article, if not specified the configuration variable `AUTHOR` will be used. It's optional.
 
-**Note**: All annotations are obligatory, except `slug` and `lang`.
+**Note**: All annotations are obligatory, except `slug` and `author` as stated above.
 
 Generate website
 ----------------
