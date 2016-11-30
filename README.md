@@ -92,6 +92,8 @@ The configuration is as follow:
 
 * **OUTPUT_FILE_EXT**: Extension of html files.
 
+        OUTPUT_FILE_EXT = 'html'
+
 How to create a new entry
 -------------------------
 
