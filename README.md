@@ -1,4 +1,4 @@
-A simple Python script to generate and maintain a static blog 
+Python script for a static blog 
 =============================================================
 
 This is just a simple `Python` script to maintain my blog, it's pretty
@@ -13,6 +13,11 @@ Requirements
 * Python 2
 * Jinja2
 * Markdown
+* Pygments (Only if you need source code syntax highlighting)
+
+You can install the required libraries with pip (or easy_install):
+
+    pip install jinja2 markdown pygments
 
 Yeah, that's it!
 
@@ -20,6 +25,7 @@ Configuration
 --------------
 
 I decided to use no more than a single `Python` file, so the configuration is done in the same script file (at the beginning).
+
 The configuration is as follow:
 
 * **LOCALE**: Locale for use on dates formats and other backend stuff related to localization in `Python`.
@@ -97,7 +103,7 @@ The configuration is as follow:
 How to create a new entry
 -------------------------
 
-Veyr simple, just create your file with a extension as `EXT` in the directory `SOURCE_DIR` 
+Very simple, just create your file with an extension as `SOURCE_FILE_EXT` in the directory `SOURCE_DIR` 
 that you set up in the script and use `Markdown` format as you wish. There are some annotations that you must put in the beginning 
 of the article/post file in plain text. These are the next:
 
@@ -123,7 +129,27 @@ of the article/post file in plain text. These are the next:
         
 * **author**: Author of the article, if not specified the configuration variable `AUTHOR` will be used. It's optional.
 
-**Note**: All annotations are obligatory, except `slug` and `author` as stated above.
+**Note**: All annotations are obligatory, except `slug`, `lang` and `author` as stated above.
+
+A blog post example:
+
+    title: Back to present II!
+    tags: insane, sci-fi, parody
+    date: 2016-01-25
+    slug: back-again
+    lang: en
+    author: The Doctor
+    
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed 
+    eiusmod tempor incidunt ut labore et dolore magna aliqua. 
+    
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+    laboris nisi ut aliquid ex ea commodi consequat. Quis aute 
+    iure reprehenderit in voluptate velit esse cillum dolore 
+    eu fugiat nulla pariatur. 
+    
+    Excepteur sint obcaecat cupiditat non proident, sunt in culpa 
+    qui officia deserunt mollit anim id est laborum.
 
 Generate website
 ----------------
@@ -131,9 +157,6 @@ Generate website
 For this, just run the script as follow:
 
     python nitido.py
-    
-**Note**: For testing purposes (or as starting point project) you could just clone the entire repository and run the command above, it will generate a blog with
-the predefined setting and some test articles. Otherwise, you just need the `Python` script and customize as you want.
     
 Peace out!
 
