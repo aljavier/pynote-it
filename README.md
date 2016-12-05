@@ -99,6 +99,10 @@ The configuration is as follow:
 * **OUTPUT_FILE_EXT**: Extension of html files.
 
         OUTPUT_FILE_EXT = 'html'
+        
+* **COPY_SOURCE_FILES_TO_OUTPUT**: Indicate if should copy sources files (markdown files) from `SOURCE_DIR` to output directory `HTML_DIR`.
+
+        COPY_SOURCE_FILES_TO_OUTPUT = True
 
 How to create a new entry
 -------------------------

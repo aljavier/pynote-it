@@ -82,6 +82,11 @@ article:last-of-type:after {
     font-size:18px;
 }
 
+.plain-text-link {
+    font-variant:small-caps;
+    text-align:right;
+}
+
 #page-foot {
     font-size: .8em;
     border-top:1px solid #ccc;
