@@ -195,7 +195,6 @@ if __name__ == "__main__":
                if len(article.lang) == 0: article.lang = DEFAULT_LANG
                
                article.content = convert_to_markdown(content)
-               print('File Name: ' + os.path.basename(file.name))
                article.slug = article.slug if len(article.slug) != 0 else os.path.basename(file.name)[:-(len(SOURCE_FILE_EXT)+1)]
                article.author = article.author if len(article.author) != 0 else AUTHOR
                
