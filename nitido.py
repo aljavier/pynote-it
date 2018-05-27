@@ -6,8 +6,6 @@ import datetime
 import locale
 import sys
 import shutil
-import sys  
-
 import jinja2
 import markdown
 
